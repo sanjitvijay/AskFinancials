@@ -9,14 +9,12 @@ function App() {
     <>
       <TopNavbar />
       <div className='p-5'>
-        <Router>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/help' element={<Help />} />
             <Route path='/chat' element={<Chat />} />
             <Route path='/dashboard' element={<Dashboard />} />
           </Routes>
-        </Router>
       </div>
     </>
   );

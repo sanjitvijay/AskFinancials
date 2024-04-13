@@ -1,7 +1,11 @@
+import DashboardCard from "../components/DashboardCard";
+
 function Dashboard() {
     return (
         <div>
-            {/* Your component content goes here */}
+            <h1 className="text-primary font-bold text-3xl mb-2">Dashboard</h1>
+                <DashboardCard/>
+            
         </div>
     );
 }

@@ -16,6 +16,10 @@ function Home() {
         setPrompt(e.target.value)
     }
 
+    const onSubmit = async (e) => {
+        e.preventDefault()
+        navigate('/dashboard')
+    }
 
     const run = async (e) => {
         e.preventDefault()
@@ -38,6 +42,7 @@ function Home() {
             <div className="flex justify-center">
                 {!showFileUpload && 
                     <button 
+                        type="button"
                         className="btn btn-primary rounded-full mt-3"
                         onClick={() => setShowFileUpload(true)}
                     >
@@ -59,8 +64,9 @@ function Home() {
                     
                     <div className="flex justify-center mt-5">
                         <button 
+                            type="submit"
                             className="btn btn-primary rounded-full"
-                            onClick={navigate('/dashboard')}
+                            onClick={onSubmit}
                         >
                             Generate Insights <RightArrow/>
                         </button>
