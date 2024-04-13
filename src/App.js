@@ -1,6 +1,9 @@
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-import Home from './pages/Home'
 import TopNavbar from './components/TopNavbar';
+import Home from './pages/Home'
+import Help from './pages/Help'
+import Chat from './pages/Chat'
+import Dashboard from './pages/Dashboard'
 function App() {
   return (
     <>
@@ -9,6 +12,9 @@ function App() {
         <Router>
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/help' element={<Help />} />
+            <Route path='/chat' element={<Chat />} />
+            <Route path='/dashboard' element={<Dashboard />} />
           </Routes>
         </Router>
       </div>

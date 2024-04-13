@@ -2,18 +2,21 @@ import { useState, useEffect } from "react";
 import genAI from "../googleClient";
 import RightArrow from "../components/RightArrow";
 import { useAppContext } from "../context/AppProvider";
-
+import { useNavigate } from "react-router-dom";
 function Home() {
     const [story, setStory] = useState('')
     const [prompt, setPrompt] = useState('')
     const [loading, setLoading] = useState(false)
     const [showFileUpload, setShowFileUpload] = useState(false)
-    
-    const {onFileChange} = useAppContext()
+    const {files, onFileChange} = useAppContext()
+
+    const navigate = useNavigate()
 
     const onChange = (e) => {
         setPrompt(e.target.value)
     }
+
+
     const run = async (e) => {
         e.preventDefault()
         const model = genAI.getGenerativeModel({ model: "gemini-pro" })
@@ -50,13 +53,14 @@ function Home() {
                             type="file" 
                             multiple
                             className="file-input file-input-primary w-full max-w-xs hover:shadow-md hover:shadow-primary" 
+                            onChange={onFileChange}
                         />
                     </div>
                     
                     <div className="flex justify-center mt-5">
                         <button 
                             className="btn btn-primary rounded-full"
-                            //onChange={onFileChange}
+                            onClick={navigate('/dashboard')}
                         >
                             Generate Insights <RightArrow/>
                         </button>
