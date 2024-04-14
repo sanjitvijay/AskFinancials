@@ -7,13 +7,21 @@ export const useAppContext = () => useContext(AppContext);
 
 function AppProvider({children}) {
     const [files, setFiles] = useState([]);
+    const [embeddingPairs, setEmbeddingPairs] = useState([])
+    const [stockData, setStockData] = useState({})
 
     const onFileChange = e => {
         setFiles([...e.target.files])
     }
 
     return (
-        <AppContext.Provider value={{files, onFileChange}}>
+        <AppContext.Provider 
+            value={{
+                files, 
+                embeddingPairs, 
+                onFileChange, 
+                setEmbeddingPairs, 
+                }}>
             {children}
         </AppContext.Provider>
     );
