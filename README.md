@@ -1,3 +1,5 @@
 # Financial Research Made Easy
 
-## building the best financial analysis platform for the individual investor
+## Building the best financial analysis platform for the individual investor
+
+Made during Mhacks x Google Hackathon 2024
